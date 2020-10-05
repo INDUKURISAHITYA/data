@@ -1,0 +1,11 @@
+table
+{
+    background-color: paleturquoise;
+    border-collapse: collapse;
+    
+}
+tr,td
+{
+    padding: 10px;
+    border:1px solid black
+}

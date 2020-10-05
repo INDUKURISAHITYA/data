@@ -1,0 +1,12 @@
+<p>Getting Data from Urls</p>
+<select  (change)="ga($event.target.value)"> 
+    <option value="">Select country...</option>
+    <option *ngFor = "let country of datafromurl" [value]=country.Country >{{country.Country}}</option>
+</select>
+
+<select >
+    <option value="">Select State...</option>
+    <option *ngFor = "let slug of datafromurl" >{{slug.Slug}}</option>
+</select>
+
+{{error}}    

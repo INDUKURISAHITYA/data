@@ -1,0 +1,8 @@
+<div class="container">
+    <h3>Employee Details</h3>
+    <ul>
+        <li *ngFor = "let x of employee" [class.select]='onselectedid(x)' (click)="onSe(x)"><span>{{x.id}}</span>&nbsp;<span>{{x.Name}}</span></li>
+        <a [routerLink]="['/Blog','ll','nn']">load ana</a>  
+    </ul>
+
+</div>

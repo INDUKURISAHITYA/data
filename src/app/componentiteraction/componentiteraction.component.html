@@ -1,0 +1,15 @@
+<h3>component iteration</h3>
+<h5>{{sendtochild}}</h5>
+<table>
+    <tr>
+        <td  [ngStyle]="prop">Name</td>
+        <td [ngStyle]="prop">Id</td>
+    </tr>
+    <tr *ngFor="let v of otherchild">
+       <td>{{v.name}}</td>
+       <td>{{v.id}}</td>
+    </tr>
+</table>
+<h5 (click)=sa(la.innerHTML) #la>child element binding to parent element when you click onit</h5>
+<h5 (mouseover)=ka() #na>child element binding to parent element when you mouseover onit</h5>
+<h5 (click)="vv($event)">ddd</h5>

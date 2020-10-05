@@ -1,0 +1,12 @@
+<div class="container">
+    <h2>{{errorMsg}}</h2>
+    <ng-container *ngIf = 'covidInfo.Countries.length'>
+        <input type="text" [(ngModel)]='country' placeholder="search country..."><br>
+        <div class='block' *ngFor ='let info of covidInfo.Countries|covidpipe:country'>
+            <h3>{{info.Country}}</h3>
+            <p>Total recoverd: {{info.TotalRecovered}}</p>
+            <p>Total Confirmed: {{info.TotalConfirmed}}</p>
+            <p [style.color]="'red'">Total Deaths: <b>{{info.TotalDeaths}}</b></p>
+        </div>
+    </ng-container>
+</div>

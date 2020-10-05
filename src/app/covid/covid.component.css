@@ -1,0 +1,14 @@
+.block
+{
+  display: inline-block;
+  width: 20%;
+  border: 1px solid gray;
+  margin: 4px;
+  padding: 5px;
+}
+h3
+{
+    background-color:darkolivegreen;
+    color: white;
+    padding: 6px;
+}

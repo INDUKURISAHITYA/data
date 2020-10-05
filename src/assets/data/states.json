@@ -1,0 +1,100 @@
+[
+    {
+      "name":"Eartiga",
+      "brand":"Maruthi",
+      "engine":"automatic",
+      "colors":{
+      "likes":["white","red", "black","blue"],
+      "dislikes":["green", "orange"]
+              }
+      
+    },
+    
+    {
+      "name":"Zen",
+      "brand":"Maruthi",
+      "engine":"manual",
+      "colors":{
+      "likes":["white","red", "black","grey"],
+      "dislikes":["green", "pink", "blue"]
+              }
+      
+    },
+    
+    {
+      "name":"I10",
+      "brand":"Hundai",
+      "engine":"manual",
+      "colors":{
+      "likes":["white","red", "black","blue"],
+      "dislikes":[ "orange"]
+              }
+      
+    },
+    
+    {
+      "name":"Duster",
+      "brand":"skoda",
+      "engine":"manual",
+      "colors":{
+      "likes":["white","red", "black","blue"],
+      "dislikes":["green", "pink", "orange"]
+              }
+      
+    },
+    
+    {
+      "name":"Range Rover",
+      "brand":"Land Rover",
+      "engine":"automatic",
+      "colors":{
+      "likes":["white","red", "black","blue"],
+      "dislikes":["green", "pink", "orange"]
+              }
+      
+    },
+    
+    {
+      "name":"volks wagenr",
+      "brand":"toota",
+      "engine":"automatic",
+      "colors":{
+      "likes":["white","red", "black","blue"],
+      "dislikes":["green", "pink", "orange"]
+              }
+      
+    },
+    
+    {
+      "name":"Audi",
+      "brand":"Toyota",
+      "engine":"automatic",
+      "colors":{
+      "likes":["white","red", "black","blue"],
+      "dislikes":["pink", "orange"]
+              }
+      
+    },
+    
+    {
+      "name":"BMW",
+      "brand":"Maruthi",
+      "engine":"automatic",
+      "colors":{
+      "likes":["white","red", "black","blue"],
+      "dislikes":["green"]
+              }
+      
+    },
+    
+    {
+      "name":"R1car",
+      "brand":"Racing",
+      "engine":"automatic",
+      "colors":{
+      "likes":["white","red", "black","blue"],
+      "dislikes":["green", "pink", "orange"]
+              
+              }
+    }
+]

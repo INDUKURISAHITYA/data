@@ -1,0 +1,57 @@
+<div class="container">
+     <form [formGroup]="Registration" (ngSubmit)="onsubmit()">
+         <h3>Registration Form</h3>
+         <div *ngIf="success" class="alert alert-warning">Form Submitted succesfully</div>
+         {{Registration.value|json}}
+         <div class="form-group" >
+            <a (click)="addclick()" class="btn btn-primary">Add name</a> <br>
+            <label>Name</label>
+             <input type="text" [class.is-invalid]= "name.invalid && name.touched"  formControlName="username" class="form-control">
+             <!--<small [class.d-none]="name.valid || name.untouched" class="text-danger">*please enter name</small>-->
+             <div *ngIf="name.errors && (name.invalid && name.touched)"> 
+                <small *ngIf="name.errors.required" class="text-danger">*please enter details</small>
+                <small *ngIf="name.errors.minlength" class="text-danger">*please minlength</small>
+                <small *ngIf="name.errors?.forbidden" class="text-danger">*{{name.errors.forbidden.value}}please enter other username</small>
+            </div>
+            <div  formArrayName="alteranateEmail" *ngFor="let name of alternateemail.controls;let i=index" >
+                <label>email</label>
+                <input type="text" class="form-control" [formControlName]=i >
+            </div>
+            </div>
+
+         <div class="form-group">
+            <label>password</label>
+            <input type="text" class="form-control" [class.is-invalid]= "Registration.get('password').touched && Registration.get('password').invalid" formControlName="password">
+            
+        </div>
+        
+        <div class="form-group">
+            <label>Confirm password</label>
+            <input type="text" class="form-control" [class.is-invalid]="cfpassword.invalid && cfpassword.touched"  formControlName="cfpassword">
+            <small class="text-danger" *ngIf=Registration.errors?.mismatch>password doesn't match</small>
+        </div>
+        
+        
+       <div formGroupName="address">
+        
+            <div class="form-group">
+                <label>City</label>
+                <input type="text"  formControlName="city"   class="form-control">
+            </div>
+
+            <div class="form-group">
+                <label>State</label>
+                <input type="text" formControlName="state"  class="form-control">
+            </div>
+
+            <div class="form-group">
+                <label>Postal Code</label>
+                <input type="text" formControlName="postalcode"  class="form-control">
+            </div>
+
+       </div>
+
+        <button class="btn btn-primary" [disabled]="Registration.invalid">Register</button>&nbsp;&nbsp;
+        <!--<button class="btn btn-primary" >loadApi</button>-->
+     </form>
+</div>

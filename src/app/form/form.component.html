@@ -1,0 +1,68 @@
+<div class="container">
+    <div class="row">
+        <div class="col-sm-6">
+    
+        
+            <form #user="ngForm" (ngSubmit)="onsubmit()"> 
+                {{user.form.value}}
+                <div class="form-Group">
+                    <label>Name</label>
+                    <input type="text" #name="ngModel" [(ngModel)]="form.name" name="name" [class.is-invalid]="name.touched && name.invalid" class="form-control" required>
+                    <small class="text-danger" [class.d-none]="name.untouched||name.valid">*Name required</small>
+                </div>
+                <div class="form-Group">
+                    <label>Email</label>
+                    <input type="text" #email="ngModel" [(ngModel)]="form.Email" [class.is-invalid]="email.touched && email.invalid" name="Email" class="form-control" required pattern="^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$">
+                    <div *ngIf="email.errors && (email.invalid && email.touched)">
+                         <small class="text-danger" *ngIf="email.errors.required">please enter email id</small>
+                         <small class="text-danger" *ngIf="email.errors.pattern">please enter a valid email</small>
+                    </div>
+                </div>
+                <div class="form-Group">
+                    <label>Mobile</label>
+                    <input type="text" #mobile="ngModel" [(ngModel)]="form.Mobile" name="Mobile" [class.is-invalid]="mobile.touched && mobile.invalid" class="form-control" required pattern="^[2-9]{1}[0-9]{9}$">
+                    <div *ngIf="mobile.errors && (mobile.invalid && mobile.touched)">
+                        <small class="text-danger" *ngIf="mobile.errors.required">please enter mobile number</small>
+                        <small class="text-danger" *ngIf="mobile.errors.pattern">please enter a 10 digit number</small>
+                   </div>
+                </div>
+                <div class="form-Group">
+                    <label>street</label>
+                    <input type="text" #street="ngModel" [(ngModel)]="form.street" name="street" [class.is-invalid]="street.touched && street.invalid" required class="form-control">
+                </div>
+                <div class="form-Group">
+                    <label>city</label>
+                    <input type="text" [(ngModel)]="form.city" #city="ngModel" [class.is-invalid]="city.touched && city.invalid" required name="city" class="form-control">
+                </div>
+           
+                 <br>
+                <button class="btn btn-primary" [disabled]="user.form.invalid">submit</button>&nbsp;
+                <button class="btn btn-primary" (click)="sa()">Fetch</button>&nbsp;
+                <button class="btn btn-primary" (click)="la()">clear</button>
+            </form> 
+        </div>
+        <div class="col-sm-4">
+          <div *ngIf = "loadpost.length">
+            <table>
+                <tr>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Mobile</th>
+                    <th>street</th>
+                    <th>city</th>
+                </tr>
+                <tr *ngFor = "let post of loadpost">
+                   <td>{{post.name}}</td>
+                   <td>{{post.Email}}</td>
+                   <td>{{post.Mobile}}</td>
+                   <td>{{post.street}}</td>
+                   <td>{{post.city}}</td>
+                </tr> 
+            </table>
+        </div>
+           </div>
+      
+    </div>
+       
+</div>
+

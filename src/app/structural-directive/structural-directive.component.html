@@ -1,0 +1,70 @@
+<h1>ngIf</h1>
+
+<div *ngIf='ngif'>structural-directive works!(Add or remove html element)</div>
+
+<h1 *ngIf="ngif;else other">welcome</h1>
+<ng-template #other>
+<h1>SignOut</h1>
+</ng-template>
+
+<div *ngIf="ngif;then thenblock;else elseblock"></div>
+<ng-template #thenblock>
+    <h1>then block</h1>
+</ng-template>
+<ng-template #elseblock>
+    <h1>else block</h1>
+</ng-template>
+
+<h1>ngSwitch</h1>
+
+<div [ngSwitch] = "color" >
+    <div *ngSwitchCase = "'red'" [style.color]="color">You picked red color</div>
+    <div *ngSwitchCase = "'Orange'"  [style.color]="color">You picked orange color</div>
+    <div *ngSwitchCase = "'green'" [style.color]="color">You picked green color</div>
+    <div *ngSwitchDefault>You picked other color</div>
+</div>
+
+<h1>ng For</h1>
+
+<div *ngFor = "let c of ca;index as i;odd as o;even as e;first as f;last as l">
+   <div [style.color]="c">{{i}} {{o}} {{e}} {{f}} {{l}} {{c}}</div>
+</div>
+
+<ul *ngFor = "let c of ca;index as i;odd as o;even as e;first as f;last as l">
+    <li [style.color]="c">{{i}} {{o}} {{e}} {{f}} {{l}} {{c}}</li>
+</ul>
+
+<div *ngIf = "table.length;else sa">
+<table  >
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Mobile</th>
+        <th>Branch</th>
+    </tr>
+    <tr *ngFor="let t of table;index as i">
+        <td>{{i+1}}</td>
+        <td>{{t.name}}</td>
+        <td>{{t.mobile}}</td>
+        <td>{{t.branch}}</td>
+    </tr>
+</table>
+</div>
+<ng-template #sa>
+    <div>No Records Found</div>
+</ng-template>
+
+<table>
+    <tr *ngFor = "let x of inside">
+        <td>{{x.name}}</td>
+        <td>{{x.mobile}}</td>
+        <td>
+            <ul *ngFor = "let b of x.hello">
+                <li>{{b}}</li>
+            </ul>
+        </td>
+       
+    </tr>
+</table>
+
+<td *ngFor="let in of inside">{{in.hello}}</td>

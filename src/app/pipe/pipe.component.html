@@ -1,0 +1,74 @@
+<h3>String</h3>
+
+<p>{{pipe}}</p>
+<p>{{pipe|uppercase}}</p>
+<p>{{pipe|lowercase}}</p>
+<p>{{pipe|titlecase}}</p>
+<p>{{"googly"|uppercase}}</p>
+
+<h3>JSON</h3>
+
+<div>{{othchild|json}}</div>
+
+<h3>Number</h3>
+
+<p>{{455.346|number:'3.1'}}</p>
+<p>{{455.346|number:'3.1-2'}}minimum num is 1 max num is 2</p> 
+<p>{{455.346|number:'3.4-5'}} minimum num is 4 max num is 5</p>
+<p>{{455.346|number:'3.1-1'}}</p>
+
+<h3>Slice</h3>
+
+<p>{{slice | slice}}</p>
+<p>{{slice | slice:30}} "cutting first 30"</p>
+<p><a href="">{{slice | slice:0:100}}</a></p>
+<p>{{slice|slice:0:100|uppercase}}"from zero to hundred"<a href="">Read more</a></p>
+
+<h3>Currency</h3>
+
+<p>{{0.23|percent}}</p>
+<p>{{333|currency}}</p>
+<p>{{333|currency:'EUR'}}</p>
+<p>{{333|currency:'EUR':'code'}}</p>
+
+<table>
+    <tr [style.backgroundColor] = "'gray'" [style.color]="'white'">
+        <td>id</td>
+        <td>Name</td>
+        <td>Id</td>
+        <td>status</td>
+        <td>Dob</td>
+        <td>age</td>
+    </tr>
+    <ng-container  *ngFor = "let child of othchild;index as i;odd as o" >
+    <tr *ngIf = "child.status == true;" >
+        <td>{{i}}</td>
+        <td>{{child.name}}</td>
+        <td>{{child.id}}</td>
+        <td>{{child.status}}</td>
+        <td>{{child.dob}}</td>
+        <td>{{child.dob|age}}</td>
+    </tr>
+    </ng-container>
+</table>
+
+<h3>{{DOB}}</h3>
+
+<p>{{DOB|date:'short'}}</p>
+<p>{{DOB|date:'medium'|uppercase}}</p>
+<p>{{DOB|date:'shortTime'}}</p>
+<p>{{DOB|date:'shortDate'}}</p>
+<p>{{DOB|date:'fullTime'}}</p>
+<p>{{DOB|date:'fullTime'}}</p>
+<p>{{DOB|date:'fullDate'}}</p>
+<p>{{DOB|date:'longDate'}}</p>
+
+<h3>Hide Mobile</h3>
+
+<p>{{mobile|hidemobile:3}}</p>
+<p>{{mobile|hidemobile:5}}</p>
+<p>{{mobile|hidemobile:7}}</p>
+
+<select>
+    <option *ngFor = "let x of othchild " [value]="x.id">{{x.name|custompipes:x.id}}</option>
+</select>

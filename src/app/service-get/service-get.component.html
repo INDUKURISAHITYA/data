@@ -1,0 +1,21 @@
+<div class="container">
+        <a routerLink="/Employee">saaa</a>
+        <input type="text" placeholder="search Name" [(ngModel)]='name'>
+        <ng-container *ngIf = 'srrr.length'>
+            <table>
+                <tr>
+                    <th>Name</th>
+                    <th>Brand</th>
+                    <th>Engine</th>
+                    <th>Likes</th>
+                    <th>Disikes</th>
+                </tr>
+                <tr *ngFor = "let stat of srrr|serviceget:name">
+                    <td>{{stat.name}}</td>
+                    <td>{{stat.brand}}</td>
+                    <td>{{stat.engine}}</td>
+                    <td><ul *ngFor= "let cc of stat.colors.likes" [style.display]="'inline'">{{cc}}</ul></td>
+                    <td><ul *ngFor= "let cc of stat.colors.dislikes"  [style.display]="'inline'">{{cc}}</ul></td>
+            </table>
+        </ng-container>      
+</div>

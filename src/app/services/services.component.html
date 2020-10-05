@@ -1,0 +1,16 @@
+
+<p>services works!{{banner}}</p>
+<table>
+    <tr>
+        <th>Name</th>
+        <th>Id</th>
+        <th>Nature</th>
+        <th>College</th>
+    </tr>
+    <tr *ngFor = "let emp of employee">
+        <td>{{emp.name}}</td>
+        <td>{{emp.id}}</td>
+        <td>{{emp.nature}}</td>
+        <td>{{emp.college}}</td>
+    </tr>
+</table>
